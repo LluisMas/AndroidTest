@@ -1,6 +1,7 @@
 package udl.eps.testaccelerometre;
 
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -17,8 +18,6 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
   private TextView view;
   private long lastUpdate;
 
-  
-
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
@@ -27,6 +26,11 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     setContentView(R.layout.main);
     view = (TextView) findViewById(R.id.textView);
     view.setBackgroundColor(Color.GREEN);
+
+    sensorManager = null;
+    PackageManager manager = getPackageManager();
+    if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER))
+        return;
 
     sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     sensorManager.registerListener(this,
@@ -48,24 +52,24 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     float y = values[1];
     float z = values[2];
 
-    float accelationSquareRoot = (x * x + y * y + z * z)
-        / (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
+    float accelationSquareRoot = (x * x + y * y + z * z) / (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
     long actualTime = System.currentTimeMillis();
+
     if (accelationSquareRoot >= 2) 
     {
-      if (actualTime - lastUpdate < 200) {
+      if (actualTime - lastUpdate < 200)
         return;
-      }
+
       lastUpdate = actualTime;
 
       Toast.makeText(this, R.string.shuffed, Toast.LENGTH_SHORT).show();
-      if (color) {
+      if (color)
         view.setBackgroundColor(Color.GREEN);
-
-      } else {
+      else
         view.setBackgroundColor(Color.RED);
-      }
+
       color = !color;
+
     }
   }
 
@@ -74,10 +78,30 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     // Do something here if sensor accuracy changes.
   }
 
-  @Override
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(sensorManager != null)
+            return;
+
+        PackageManager manager = getPackageManager();
+        if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER))
+            return;
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        sensorManager.registerListener(this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        // register this class as a listener for the accelerometer sensor
+        lastUpdate = System.currentTimeMillis();
+    }
+
+    @Override
   protected void onPause() {
     // unregister listener
     super.onPause();
     sensorManager.unregisterListener(this);
+    sensorManager = null;
   }
 } 
