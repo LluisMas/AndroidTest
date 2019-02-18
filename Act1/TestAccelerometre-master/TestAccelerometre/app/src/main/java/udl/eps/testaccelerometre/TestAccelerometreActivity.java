@@ -16,6 +16,7 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
   private SensorManager sensorManager;
   private boolean color = false;
   private TextView view;
+  private TextView colorview;
   private long lastUpdate;
 
   @Override
@@ -25,19 +26,36 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
     view = (TextView) findViewById(R.id.textView);
-    view.setBackgroundColor(Color.GREEN);
+    colorview = (TextView) findViewById(R.id.textView2);
+    colorview.setBackgroundColor(Color.GREEN);
 
     sensorManager = null;
     PackageManager manager = getPackageManager();
     if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER))
+    {
+        view.setText(getResources().getString(R.string. no_accelero));
         return;
+    }
 
+    view.setText(getResources().getString(R.string.shake));
     sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    setInformation();
     sensorManager.registerListener(this,
               sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
               SensorManager.SENSOR_DELAY_NORMAL);
       // register this class as a listener for the accelerometer sensor
     lastUpdate = System.currentTimeMillis();
+  }
+
+  private void setInformation()
+  {
+      Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+      String text = getResources().getString(R.string.shake);
+      text += "\n\nResolucio: "  + sensor.getResolution() + "\n";
+      text += "Rang: "  + sensor.getMaximumRange() + "\n";
+      text += "Consum: "  + sensor.getPower() + "\n";
+      view.setText(text);
   }
 
   @Override
@@ -64,12 +82,12 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
 
       Toast.makeText(this, R.string.shuffed, Toast.LENGTH_SHORT).show();
       if (color)
-        view.setBackgroundColor(Color.GREEN);
+          colorview.setBackgroundColor(Color.GREEN);
       else
-        view.setBackgroundColor(Color.RED);
+          colorview.setBackgroundColor(Color.RED);
 
       color = !color;
-
+      setInformation();
     }
   }
 
