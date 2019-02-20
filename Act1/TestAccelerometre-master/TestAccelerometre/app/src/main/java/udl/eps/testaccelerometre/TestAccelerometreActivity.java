@@ -24,12 +24,16 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
   private long lastUpdate;
   private long lastUpdatelight;
   private float lastLum = 0;
+  private static final String KEY_SCROLL = "scroll";
+  private static final String KEY_COLOR = "color";
+
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
 
 
     super.onCreate(savedInstanceState);
+
     setContentView(R.layout.main);
     view = findViewById(R.id.textView);
     upperView = findViewById(R.id.textView2);
@@ -66,6 +70,13 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
           String formated = getResources().getString(R.string.light_data, sensor.getMaximumRange());
           bottomView.setText(formated);
           sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT), SensorManager.SENSOR_DELAY_NORMAL);
+      }
+      if(savedInstanceState != null)
+      {
+          scrollView.setText(savedInstanceState.getString(KEY_SCROLL));
+          color = savedInstanceState.getBoolean(KEY_COLOR);
+          upperView.setBackgroundColor( (color) ? Color.GREEN : Color.RED);
+
       }
     lastUpdate = System.currentTimeMillis();
     lastUpdatelight = System.currentTimeMillis();
@@ -170,6 +181,7 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
         }
 
         lastUpdate = System.currentTimeMillis();
+        lastUpdatelight = System.currentTimeMillis();
     }
 
     @Override
@@ -178,4 +190,11 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     super.onPause();
     sensorManager.unregisterListener(this);
   }
-} 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_SCROLL, scrollView.getText().toString());
+        outState.putBoolean(KEY_COLOR, color);
+    }
+}
