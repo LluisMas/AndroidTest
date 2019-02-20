@@ -38,6 +38,7 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
 
     upperView.setBackgroundColor(Color.GREEN);
     bottomView.setBackgroundColor(Color.YELLOW);
+    scrollView.setBackgroundColor(Color.YELLOW);
 
     sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     PackageManager manager = getPackageManager();
