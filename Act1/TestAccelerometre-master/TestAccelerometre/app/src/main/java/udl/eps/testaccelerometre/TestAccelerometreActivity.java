@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class TestAccelerometreActivity extends Activity implements SensorEventListener {
   private SensorManager sensorManager;
-  private boolean color = false;
+  private boolean color = true;
   private boolean hasAccelero = true;
   private boolean hasLight = true;
   private TextView view;
@@ -45,39 +45,13 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     scrollView.setBackgroundColor(Color.YELLOW);
 
     sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-    PackageManager manager = getPackageManager();
 
-    if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER))
+    if(savedInstanceState != null)
     {
-        view.setText(getResources().getString(R.string. no_accelero));
-        hasAccelero = false;
+        scrollView.setText(savedInstanceState.getString(KEY_SCROLL));
+        color = savedInstanceState.getBoolean(KEY_COLOR);
+        upperView.setBackgroundColor( (color) ? Color.GREEN : Color.RED);
     }
-    else
-    {
-        view.setText(getResources().getString(R.string.shake));
-        setAccelerometerInformation();
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-      if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_LIGHT))
-      {
-          bottomView.setText(getResources().getString(R.string.no_light));
-          hasLight = false;
-      }
-      else
-      {
-          Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-          String formated = getResources().getString(R.string.light_data, sensor.getMaximumRange());
-          bottomView.setText(formated);
-          sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT), SensorManager.SENSOR_DELAY_NORMAL);
-      }
-      if(savedInstanceState != null)
-      {
-          scrollView.setText(savedInstanceState.getString(KEY_SCROLL));
-          color = savedInstanceState.getBoolean(KEY_COLOR);
-          upperView.setBackgroundColor( (color) ? Color.GREEN : Color.RED);
-
-      }
     lastUpdate = System.currentTimeMillis();
     lastUpdatelight = System.currentTimeMillis();
   }
@@ -99,7 +73,7 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
       {
           case Sensor.TYPE_ACCELEROMETER:
           {
-              getAccelerometer(event); // wth is that function name lmao
+              getAccelerometer(event);
               break;
           }
           case Sensor.TYPE_LIGHT:
@@ -152,9 +126,9 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
       lastUpdate = actualTime;
 
       Toast.makeText(this, R.string.shuffed, Toast.LENGTH_SHORT).show();
+      color = !color;
       upperView.setBackgroundColor( (color) ? Color.GREEN : Color.RED);
 
-      color = !color;
         setAccelerometerInformation();
     }
   }
@@ -169,14 +143,29 @@ public class TestAccelerometreActivity extends Activity implements SensorEventLi
     protected void onResume() {
         super.onResume();
 
-        if(hasAccelero)
+        PackageManager manager = getPackageManager();
+        if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_ACCELEROMETER))
         {
-            sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+            view.setText(getResources().getString(R.string. no_accelero));
+            hasAccelero = false;
+        }
+        else
+        {
+            view.setText(getResources().getString(R.string.shake));
+            setAccelerometerInformation();
             sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
         }
-        if(hasLight)
+
+        if(!manager.hasSystemFeature(PackageManager.FEATURE_SENSOR_LIGHT))
         {
-            sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+            bottomView.setText(getResources().getString(R.string.no_light));
+            hasLight = false;
+        }
+        else
+        {
+            Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+            String formated = getResources().getString(R.string.light_data, sensor.getMaximumRange());
+            bottomView.setText(formated);
             sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT), SensorManager.SENSOR_DELAY_NORMAL);
         }
 
