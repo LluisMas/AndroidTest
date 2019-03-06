@@ -57,21 +57,6 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-
-/**
- * Using location settings.
- * <p/>
- * Uses the {@link com.google.android.gms.location.SettingsApi} to ensure that the device's system
- * settings are properly configured for the app's location needs. When making a request to
- * Location services, the device's system settings may be in a state that prevents the app from
- * obtaining the location data that it needs. For example, GPS or Wi-Fi scanning may be switched
- * off. The {@code SettingsApi} makes it possible to determine if a device's system settings are
- * adequate for the location request, and to optionally invoke a dialog that allows the user to
- * enable the necessary settings.
- * <p/>
- * This sample allows the user to request location updates using the ACCESS_FINE_LOCATION setting
- * (as specified in AndroidManifest.xml).
- */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -184,11 +169,9 @@ public class MainActivity extends AppCompatActivity {
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         mSettingsClient = LocationServices.getSettingsClient(this);
-
-        // Kick off the process of building the LocationCallback, LocationRequest, and
-
-
-
+        createLocationCallback();
+        createLocationRequest();
+        buildLocationSettingsRequest();
 
     }
 
@@ -216,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * Sets up the location request. Android has two location request settings:
      * {@code ACCESS_COARSE_LOCATION} and {@code ACCESS_FINE_LOCATION}. These settings control
@@ -242,8 +224,7 @@ public class MainActivity extends AppCompatActivity {
         // Sets the fastest rate for active location updates. This interval is exact, and your
         // application will never receive updates faster than this value.
         mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
-
-
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
     /**
@@ -254,8 +235,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-
-
+                mCurrentLocation = locationResult.getLastLocation();
                 mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
                 updateLocationUI();
             }
@@ -269,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void buildLocationSettingsRequest() {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
-
+        builder.addLocationRequest(mLocationRequest);
         mLocationSettingsRequest = builder.build();
     }
 
@@ -284,8 +264,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case Activity.RESULT_CANCELED:
                         Log.i(TAG, "User chose not to make required location settings changes.");
-
-
+                        mRequestingLocationUpdates = false;
+                        updateUI();
                         break;
                 }
                 break;
@@ -300,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
         if (!mRequestingLocationUpdates) {
             mRequestingLocationUpdates = true;
             setButtonsEnabledState();
-
+            startLocationUpdates();
         }
     }
 
@@ -327,13 +307,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
                         Log.i(TAG, "All location settings are satisfied.");
                         //noinspection MissingPermission
-                        if (ActivityCompat.checkSelfPermission(getApplicationContext(),
-                                Manifest.permission.ACCESS_FINE_LOCATION)==
-                                PackageManager.PERMISSION_GRANTED)
-                            mFusedLocationClient.requestLocationUpdates(mLocationRequest,
-                                    mLocationCallback, Looper.myLooper());
-
-
+                        if (ActivityCompat.checkSelfPermission(getApplicationContext(),  Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+                            mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
+                        updateUI();
                     }
                 })
                 .addOnFailureListener(this, new OnFailureListener() {
@@ -395,12 +371,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void updateLocationUI() {
         if (mCurrentLocation != null) {
-            mLatitudeTextView.setText(String.format(Locale.ENGLISH, "%s: %f", mLatitudeLabel,
-
-            mLongitudeTextView.setText(String.format(Locale.ENGLISH, "%s: %f", mLongitudeLabel,
-
-            mLastUpdateTimeTextView.setText(String.format(Locale.ENGLISH, "%s: %s",
-                    mLastUpdateTimeLabel, mLastUpdateTime));
+            mLatitudeTextView.setText(String.format(Locale.ENGLISH, "%s: %f", mLatitudeLabel, mCurrentLocation.getLatitude()));
+            mLongitudeTextView.setText(String.format(Locale.ENGLISH, "%s: %f", mLongitudeLabel, mCurrentLocation.getLongitude() ));
+            mLastUpdateTimeTextView.setText(String.format(Locale.ENGLISH, "%s: %s", mLastUpdateTimeLabel, mLastUpdateTime));
         }
     }
 
@@ -416,9 +389,14 @@ public class MainActivity extends AppCompatActivity {
         // It is a good practice to remove location requests when the activity is in a paused or
         // stopped state. Doing so helps battery performance and is especially
         // recommended in applications that request frequent location updates.
-        mFusedLocationClient.removeLocationUpdates(mLocationCallback);
-
-
+        mFusedLocationClient.removeLocationUpdates(mLocationCallback)
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        mRequestingLocationUpdates = false;
+                        setButtonsEnabledState();
+                    }
+                });
     }
 
     @Override
@@ -459,13 +437,8 @@ public class MainActivity extends AppCompatActivity {
      * @param actionStringId   The text of the action item.
      * @param listener         The listener associated with the Snackbar action.
      */
-    private void showSnackbar(final int mainTextStringId, final int actionStringId,
-                              View.OnClickListener listener) {
-        Snackbar.make(
-                findViewById(android.R.id.content),
-                getString(mainTextStringId),
-                Snackbar.LENGTH_INDEFINITE)
-                .setAction(getString(actionStringId), listener).show();
+    private void showSnackbar(final int mainTextStringId, final int actionStringId, View.OnClickListener listener) {
+        Snackbar.make(findViewById(android.R.id.content), getString(mainTextStringId), Snackbar.LENGTH_INDEFINITE).setAction(getString(actionStringId), listener).show();
     }
 
     /**
@@ -474,8 +447,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private boolean checkPermissions() {
-        int permissionState = ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION);
+        int permissionState = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
         return permissionState == PackageManager.PERMISSION_GRANTED;
     }
 
@@ -492,8 +464,7 @@ public class MainActivity extends AppCompatActivity {
                     android.R.string.ok, new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
-
+                            startLocationPermissionRequest();
                         }
                     });
         } else {
@@ -502,14 +473,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void startLocationPermissionRequest() {
         ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                 REQUEST_PERMISSIONS_REQUEST_CODE);
     }
-
-
-
 }
 
