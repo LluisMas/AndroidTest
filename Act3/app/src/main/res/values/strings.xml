@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Hellomaps</string>
     <string name="title_activity_maps">Map</string>
+    <string name="go_to_bondi">Go to Bondi</string>
+    <string name="go_to_sydney">Go to Romania</string>
+    <string name="duration">Custom Duration</string>
+    <string name="stop_animation">\u25A0</string>
+    <string name="animate">Animate</string>
+    <string name="map_not_ready">Map is not ready yet</string>
 </resources>

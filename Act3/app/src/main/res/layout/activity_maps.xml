@@ -1,4 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/stop_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onStopAnimation"
+            android:text="@string/stop_animation" />
+
+        <ToggleButton
+            android:id="@+id/animate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onToggleAnimate"
+            android:textOn="@string/animate"
+            android:textOff="@string/animate" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/duration_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onToggleCustomDuration"
+            android:text="@string/duration" />
+
+        <SeekBar
+            android:id="@+id/duration_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="5000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/sydney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="onGoToLocation"
+            android:layout_weight="0.5"
+            android:text="@string/go_to_sydney" />
+
+        <Button
+            android:id="@+id/bondi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="onGoToLocation"
+            android:layout_weight="0.5"
+            android:text="@string/go_to_bondi" />
+    </LinearLayout>
+
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,3 +76,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapsActivity" />
+
+</LinearLayout>
