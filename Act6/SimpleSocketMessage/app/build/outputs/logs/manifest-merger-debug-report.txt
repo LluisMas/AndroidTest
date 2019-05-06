@@ -1,0 +1,151 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/9974a1684575759afc253827a8b369e8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/8402eee8248bbf785473de02bc7c71b9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/863dd355a03b8e8377dd6ed3cf908ad9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/393868b2c677c8152f4788441fc348ac/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/62a328d377a9f9c42c4f5e5acb90f270/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/6699000912e0840363142b43a40e4602/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/551fe0ddb6b613bcb7666ed0195f4b7e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c421c06254237db6bb47da32cf68fe90/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/77a8a57911cf7952f881a4c5c6adc486/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0a26c2b193d142f95f27e363163f76e9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/dab19db5e7593942a19a8d998ea6d990/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/64c96c7be354b3c9eb262293cdc3224b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0135da1bdacb3d2690888abf55311a43/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/11e88ca8b69036e9b9de1b62595cee6b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/23f18c364429e62be407f45506484a45/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/e93b7a46fff272291dc1b5ddc2a683fe/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/9e27ea0cd146c7b9231e79bbf6008b0f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/5e93faebda0ae44782e4191f5bc40d1b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/7aae026f676b4a1ad36504a8f85efaae/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0ba9db5dbe67b722e5751930bdf30427/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/e51d9996d47f49e2508252d0c9e648e6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/543e1fd16be439bbe1f3d5e131bebef4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/0f7c37d016fbb6e915ebdf6a3f8b65e6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/3571af7e9c5d321249d24dab9303c091/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/aedf982580e5154d6642be3d0c55504d/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:7:5-21:19
+MERGED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/23f18c364429e62be407f45506484a45/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/23f18c364429e62be407f45506484a45/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:10:9-41
+	android:icon
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:11:9-40
+activity#network.manning.msi.com.SimpleSocket
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:12:9-20:20
+	android:label
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:14:13-45
+	android:name
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml:18:27-74
+uses-sdk
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/9974a1684575759afc253827a8b369e8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/9974a1684575759afc253827a8b369e8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/8402eee8248bbf785473de02bc7c71b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/8402eee8248bbf785473de02bc7c71b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/863dd355a03b8e8377dd6ed3cf908ad9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/863dd355a03b8e8377dd6ed3cf908ad9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/393868b2c677c8152f4788441fc348ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/393868b2c677c8152f4788441fc348ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/62a328d377a9f9c42c4f5e5acb90f270/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/62a328d377a9f9c42c4f5e5acb90f270/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/6699000912e0840363142b43a40e4602/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/6699000912e0840363142b43a40e4602/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/551fe0ddb6b613bcb7666ed0195f4b7e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/551fe0ddb6b613bcb7666ed0195f4b7e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c421c06254237db6bb47da32cf68fe90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c421c06254237db6bb47da32cf68fe90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/77a8a57911cf7952f881a4c5c6adc486/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/77a8a57911cf7952f881a4c5c6adc486/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0a26c2b193d142f95f27e363163f76e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0a26c2b193d142f95f27e363163f76e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/dab19db5e7593942a19a8d998ea6d990/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/dab19db5e7593942a19a8d998ea6d990/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/64c96c7be354b3c9eb262293cdc3224b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/64c96c7be354b3c9eb262293cdc3224b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0135da1bdacb3d2690888abf55311a43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0135da1bdacb3d2690888abf55311a43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/11e88ca8b69036e9b9de1b62595cee6b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/11e88ca8b69036e9b9de1b62595cee6b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/c12a5f832685cbbb37712591fb79da90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/23f18c364429e62be407f45506484a45/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/23f18c364429e62be407f45506484a45/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/e93b7a46fff272291dc1b5ddc2a683fe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/e93b7a46fff272291dc1b5ddc2a683fe/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/9e27ea0cd146c7b9231e79bbf6008b0f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/9e27ea0cd146c7b9231e79bbf6008b0f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/5e93faebda0ae44782e4191f5bc40d1b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/5e93faebda0ae44782e4191f5bc40d1b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/7aae026f676b4a1ad36504a8f85efaae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/7aae026f676b4a1ad36504a8f85efaae/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0ba9db5dbe67b722e5751930bdf30427/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/0ba9db5dbe67b722e5751930bdf30427/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/e51d9996d47f49e2508252d0c9e648e6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/e51d9996d47f49e2508252d0c9e648e6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/543e1fd16be439bbe1f3d5e131bebef4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/543e1fd16be439bbe1f3d5e131bebef4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/0f7c37d016fbb6e915ebdf6a3f8b65e6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/0f7c37d016fbb6e915ebdf6a3f8b65e6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/3571af7e9c5d321249d24dab9303c091/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /home/lmr/.gradle/caches/transforms-2/files-2.1/3571af7e9c5d321249d24dab9303c091/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/aedf982580e5154d6642be3d0c55504d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /home/lmr/.gradle/caches/transforms-2/files-2.1/aedf982580e5154d6642be3d0c55504d/AndroidManifest.xml:20:5-44
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		ADDED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/lmr/Desktop/AndroidTest/Act6/SimpleSocketMessage/app/src/main/AndroidManifest.xml
