@@ -50,6 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mAnimateToggle = (CompoundButton) findViewById(R.id.animate);
         mCustomDurationToggle = (CompoundButton) findViewById(R.id.duration_toggle);
         mCustomDurationBar = (SeekBar) findViewById(R.id.duration_bar);
+        updateEnabledState();
     }
 
 
@@ -66,21 +67,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Add a marker in Romania and move the camera
+        LatLng romania = new LatLng(44.439663, 26.096306);
+        mMap.addMarker(new MarkerOptions().position(romania).title("Marker in Romania"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(romania));
 
     }
 
-    public void onToggleCustomDuration(View view) {updateEnabledState();}
-    public void onToggleAnimate(View view) {
-        updateEnabledState();
-    }
+    public void onToggleCustomDuration(View view) {updateEnabledState(); }
+    public void onToggleAnimate(View view) { updateEnabledState(); }
 
     private void updateEnabledState() {
         mCustomDurationToggle.setEnabled(mAnimateToggle.isChecked());
-        mCustomDurationBar.setEnabled(mAnimateToggle.isChecked() && mCustomDurationToggle.isChecked());
+        mCustomDurationBar.setEnabled(
+                mAnimateToggle.isChecked() && mCustomDurationToggle.isChecked());
     }
 
     private boolean checkReady() {
